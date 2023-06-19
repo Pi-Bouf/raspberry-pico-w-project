@@ -25,5 +25,8 @@ add_executable(
 # Pull in pico libraries that we need
 target_link_libraries(${OUTPUT_NAME} pico_stdlib hardware_spi hardware_pwm hardware_dma rgbled button pico_display_2 st7789 pico_graphics)
 
+pico_enable_stdio_usb(pico_big_room_project 1) 
+pico_enable_stdio_uart(pico_big_room_project 0) 
+
 # create map/bin/hex file etc.
-# pico_add_extra_outputs(${OUTPUT_NAME})
+pico_add_extra_outputs(${OUTPUT_NAME})
